@@ -7,10 +7,10 @@ class Artist < ActiveRecord::Base
   end
 
   def song_count
-    Show.sum("songs", Show.artist)
+    self.songs.count
   end
 
   def genre_count
-    Show.sum("genre", Show.artist)
+    self.genre.count
   end
 end
