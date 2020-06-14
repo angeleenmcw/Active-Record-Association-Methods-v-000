@@ -3,14 +3,14 @@ class Artist < ActiveRecord::Base
   has_many :genres, through: :songs
 
   def get_genre_of_first_song
-    show.where("genre = ?", show.first)
+    Show.where("genre = ?", show.first("songs"))
   end
 
   def song_count
-    show.sum("songs")
+    Show.sum("songs")
   end
 
   def genre_count
-    #return the number of genres associated with the artist
+    Show.sum("genre")
   end
 end
