@@ -11,7 +11,6 @@ class Genre < ActiveRecord::Base
   end
 
   def all_artist_names
-    Show.where("artists = ?", Show.artist) 
-      
+    Show.where("artists = ?", Show.artists) 
   end
 end
